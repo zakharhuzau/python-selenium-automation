@@ -5,7 +5,7 @@ from behave import given, when, then
 def click_cart(context):
     context.driver.find_element(By.CSS_SELECTOR, '#nav-cart').click()
 
-@then('Verify Amazon Cart')
-def verify_amazon_cart(context):
+@then('Verify Amazon Cart({count})')
+def verify_amazon_cart(context, count):
     expected = context.driver.find_element(By.ID, 'nav-cart-count').text
-    assert expected == "0", f'Error! Expected {expected}, but got "0"'
+    assert expected == count, f'Error! Expected {expected}, but got "{count}"'
