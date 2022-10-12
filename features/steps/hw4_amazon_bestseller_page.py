@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 BESTSELLER_PAGE = 'https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers'
-FIVE_LINKS = (By.CSS_SELECTOR, '._p13n-zg-nav-tab-all_style_zg-tabs__EYPLq a')
+FIVE_LINKS = (By.CSS_SELECTOR, '#zg_header a')
 FIELD_INPUT = (By.CSS_SELECTOR, '#twotabsearchtextbox')
 SEARCH_BUTTON = (By.CSS_SELECTOR, '#nav-search-submit-button')
 HAVE_PRICE = (By.CSS_SELECTOR, '.a-price-whole')
