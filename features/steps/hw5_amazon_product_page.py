@@ -5,9 +5,10 @@ PRODUCT_IMG = (By.CSS_SELECTOR, '.swatchAvailable img')
 PRODUCT_TEXT = (By.CSS_SELECTOR, '.selection')
 
 
-@given('Open Amazon product page')
-def open_amazom_product_page(context):
-    context.driver.get('https://www.amazon.com/gp/product/B07BJKRR25/')
+@given('Open Amazon product page {end_url}')
+def open_amazom_product_page(context, end_url):
+    context.app.product_page.open_url(end_url)
+
 
 
 @then('Verify colors')

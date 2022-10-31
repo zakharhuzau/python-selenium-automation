@@ -3,10 +3,6 @@ from behave import given, when, then
 
 BESTSELLER_PAGE = 'https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers'
 FIVE_LINKS = (By.CSS_SELECTOR, '#zg_header a')
-# FIELD_INPUT = (By.CSS_SELECTOR, '#twotabsearchtextbox')
-# SEARCH_BUTTON = (By.CSS_SELECTOR, '#nav-search-submit-button')
-# HAVE_PRICE = (By.CSS_SELECTOR, '.a-price-whole')
-# ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, '#add-to-cart-button')
 
 
 @given('Open BestSeller page')
@@ -24,25 +20,18 @@ def verify_5links(context):
 @when('Input {product} into Amazon search field')
 def input_into_amazon(context, product):
     context.app.main_page.input_into_search(product)
-    # field_input = context.driver.find_element(*FIELD_INPUT)
-    # field_input.clear()
-    # field_input.send_keys(product)
 
 
 @when('Click on search button')
 def click_search_btn(context):
     context.app.main_page.click_search_btn()
-    # context.driver.find_element(*SEARCH_BUTTON).click()
 
 
 @when('Click on any product')
 def click_any_product(context):
     context.app.search_result_page.click_any_product()
-    # products = context.driver.find_elements(*HAVE_PRICE)
-    # products[0].click()
 
 
 @when('Click on add to cart button')
 def click_addtocart_btn(context):
     context.app.product_page.click_add_to_cart_btn()
-    # context.driver.find_element(*ADD_TO_CART_BUTTON).click()
